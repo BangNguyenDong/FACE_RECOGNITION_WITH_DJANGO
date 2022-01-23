@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../static/assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css"
+    />
+
+    <title>Students Attendance Check</title>
+  </head>
+  <body>
+
+    <a href="{% url 'index' %}" class="home_header"> Log out</a>
+
+    <div class="background_home">
+      <img src="../../static/assets/images/bg_image.png" alt="" />
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <header class="header">
+          <div class="sidebar-menu">
+            <div class="sidebar-header">
+              <div class="logo">
+                <p>
+                  System Attendance Check
+                </p>
+              </div>
+            </div>
+            <ul class="main-menu">
+              <li class="main-menu-item">
+                <a href="" class="menu-item-link">Home</a>
+              </li>
+            
+            </ul>
+          </div>
+        </header>
+      </div>
+
+      <div class="col-10">
+        <div class="container">
+         
+
+          <div class="row">
+            <div class="col-4">
+              <div class="wrap-item">
+                <div class="img-wrap">
+                  <img
+                    src="../../static/assets/images/uploadimage.jpg"
+                    alt="image"
+                  />
+                </div>
+                <div class="item-body">
+                  <div class="body-title"></div>
+                  <span class="body-desc"> </span>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#exampleModalLong"
+                  >
+                    Upload Picture
+                  </button>
+                  <div class="modal fade" id="exampleModalLong">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title"></h5>
+                        </div>
+                        <form
+                          method="post"
+                          action="/detectImage"
+                          enctype="multipart/form-data"
+                        >
+                          {% csrf_token %}
+                          <div class="modal-body">
+                            <input type="file" name="image" required />
+                          </div>
+
+                          <div class="modal-footer">
+                            <a
+                              type="button"
+                              class="btn btn-secondary"
+                              data-dismiss="modal"
+                              >Close</a
+                            >
+                            <button type="submit" class="btn btn-primary">
+                              Process
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="wrap-item">
+                <div class="img-wrap">
+                  <img
+                    src="../../static/assets/images/webcam.jpg"
+                    alt="image"
+                  />
+                </div>
+                <div class="item-body">
+                  <div class="body-title"></div>
+                  <span class="body-desc"> </span>
+                  <a href="/facecam_feed" class="btn btn-primary"
+                    >Open Webcam</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="wrap-item">
+                <div class="img-wrap">
+                  <img
+                    src="../../static/assets/images/training data.png"
+                    alt="image"
+                  />
+                </div>
+                <div class="item-body">
+                  <div class="body-title"></div>
+                  <span class="body-desc"> </span>
+                  <a href="/train_model" class="btn btn-primary">Train</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

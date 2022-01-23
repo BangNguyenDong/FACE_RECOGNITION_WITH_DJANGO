@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../static/assets/css/styles.css"  type="text/css"/>
+    <title>Attendance system</title>
+ 
+  </head>
+  <body>
+    <div class="background">
+      <img src="../../static/assets/images/bg_image.png" alt="image" />
+    </div>
+
+    <div class="formLogin">
+
+      <div class="modal_wrapper">
+        <div class="modal_header"> Login</div>
+        <div class="modal_input">
+
+          <label for="name">Name</label>
+          <input type="text" placeholder="Your name" class="formInput">
+        </div>
+        
+        <div class="modal_input">
+
+          <label for="password">Password</label>
+          <input type="password" placeholder="Your password" class="formInput">
+        </div>
+        <a href="{% url 'home' %}" class="btn btn-primary"> Login </a>
+        
+      </div>
+    </div>
+  </body>
+</html>
